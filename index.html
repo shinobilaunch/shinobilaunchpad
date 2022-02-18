@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Shinobi Inu</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" \>
+    <link rel="stylesheet" href="css/style.css" media="screen" \>
+    <link rel="stylesheet" href="css/iziToast.min.css" media="screen" \>
+
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/iziToast.min.js"></script>
+    <!--Begin -->
+    <!--End -->
+
+</head>
+
+
+
+<body>
+
+	<header>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg">
+				<a class="navbar-brand" href="#">
+					<img src="images/logo.png" class="img-fluid">
+					<h1>SHINOBI INU</h1>
+				</a>
+				<button id="btn-connect1" color="#5aa62b" font-size="14" size="36" class="unlock-wallet"  data-toggle="modal" data-target="#modalConnectWallet">CONNECT</button>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container">
+	
+		<div class="col-lg-5 col-md-8 wrapper">
+			<div class="head-wrap">
+				<h2>shinobi inu presale $SNU</h2>
+				<div class="connect-wrap">
+					<div class="balance-wrap">
+						<div class="row" style="justify-content: center;">
+							<div class="col-8">
+								<p class="progress-percentage"><span id="info-total-deposit">0</span>/<span id="info-hardcap">0</span> ETH Raised</p>
+								<div class="progress">
+								  <div id="info-progress" class="progress-bar" role="progressbar" style="width: 1%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<input id="input-eth" class="input-bordered" type="number" placeholder="">
+								<p class="progress-percentage">time left = <span id="info-timeleft">0 days 00:00:00</span></p>
+								<button id="btn-contribute" type="button" class="button-contribute">CONTRIBUTE</button>
+							</div>
+						</div>	
+						
+						<div id="your-info-wrap" class="contri-wrap" style="display: block;">
+							<div style="display: flex;">
+								<div class="col-md-6 balance-card" style="text-align: left;">
+									<h3>Balance</h3>
+									<h2 id="your-deposit">-- ETH</h2>
+								</div>
+								<div class="col-md-6 balance-card" style="text-align: right;">
+									<h3>Token Balance</h3>
+									<h2 id="your-token">-- SNU</h2>
+								</div>
+							</div>
+							<div class="col-8" style="margin: auto; margin-top: 20px;">
+								<div>
+									Token will be released on <span id="info-time-release"></span>
+								</div>
+								<button id="btn-claim" type="button" class="button-contribute">CLAIM</button>
+							</div>
+							<br>
+							<br>
+							<p class="progress-percentage" style="text-align: center;">maximum contribution <span id="your-max-deposit" style="font-weight: 600;">-- eth</span></p>
+							<p class="progress-percentage" style="text-align: center;">minimum contribution <span id="your-min-deposit" style="font-weight: 600;">-- eth</span></p>
+						</div>
+
+					</div>
+					
+					<div id="your-info-whitelist" class="connect-wal">
+						<img id="your-whitelist-info-img" class="img-fluid" style="width: 16px;">
+						<span id="your-whitelist-info"></span> <br>
+						<span id="your-address" class="text-underline"></span>
+					</div>
+				</div>
+				<h3 id="info-network"></h3>
+			</div>
+		</div>
+		
+		<div class="col-lg-5 col-md-8" style="margin: auto;text-align: center;margin-bottom: 5rem;padding: 0;">
+			<button id="btn-connect2" color="#5aa62b" font-size="14" size="36" class="unlock-wallet con-wallet" data-toggle="modal" data-target="#modalConnectWallet">
+				<div class="scale">CONNECT WALLET</div>
+			</button>
+		</div>
+	</div>
+	
+    <!-- Modal Connect -->
+    <div class="modal fade" id="modalConnectWallet" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="display: flex; align-items: center;font-style: normal; font-weight: 500;font-size: 1rem;color: #212529;border-bottom: none;">
+                    <div class="modal-title" id="exampleModalLongTitle">Connect to a wallet</div>
+                    <a data-dismiss="modal" role="button">
+                        <img src="./images/close.png" style="width: 14px; height: 14px;">
+                    </a>
+                </div>
+                <div class="modal-body" style="font-size: 1rem;padding-top: 5px;">
+                    <a id="btn-connect-metamask" data-dismiss="modal" role="button" class="btn-wallet" style="display: flex;">
+                        <div class="scale" style="display: flex;flex-grow: 1;">Metamask</div>
+                        <img src="./images/metamask.png" style="width: 27px; height: 24px;">
+                    </a>
+                    <a id="btn-connect-trust" data-dismiss="modal" role="button" class="btn-wallet" style="display: flex;margin-top: 20px;">
+                        <div class="scale" style="display: flex;flex-grow: 1;">Trust wallet</div>
+                        <img src="./images/trust.png" style="width: 28px; height: 28px;">
+                    </a>
+                    <a id="btn-connect-wlconnect" data-dismiss="modal" role="button" class="btn-wallet" style="display: flex;margin-top: 20px;">
+                        <div class="scale" style="display: flex;flex-grow: 1;">WalletConnect</div>
+                        <img src="./images/wlconnect.svg" style="width: 28px; height: 28px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+	<script src="https://unpkg.com/web3@1.6.0/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/@walletconnect/web3-provider@1.6.5/dist/umd/index.min.js"></script>
+    <script src="./js/web3_config.js"></script>
+    <script src="./js/web3_index.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
